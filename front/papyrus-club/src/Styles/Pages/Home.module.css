@@ -1,0 +1,45 @@
+@import 'https://fonts.googleapis.com/css?family=PT+Sans:400,700';
+
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100vh;
+    font-size: 18px;
+    background-color: rgb(255, 239, 219);
+}
+
+
+
+.tiles {
+	padding: 6vh 16vw;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+	position: relative;
+}
+.tile {
+	margin: 15px;
+	cursor: pointer;
+	overflow: hidden;
+	width: 18vw;
+	height: 25vw;
+}
+
+.tile img {
+    width: 100%;
+}
+
+.tileStyle {
+    width: 62vw;
+    height: 62vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    margin-top: -31vw;
+    margin-left: -31vw;
+    box-shadow: 0 0 40px 5px rgba(0, 0, 0, 0.3);
+    transform: none;
+}

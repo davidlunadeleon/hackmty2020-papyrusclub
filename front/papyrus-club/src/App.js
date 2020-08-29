@@ -15,12 +15,10 @@ class App extends Component {
         <Router>
           <Navbar />
           <br />
-            <div className="container mt-3">
               <Switch>
                 <Route exact path={"/"} component={Home} />
                 <Route path='/chat' component={Chat}/>
               </Switch>
-            </div>
       </Router>
     );
   }

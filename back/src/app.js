@@ -2,11 +2,15 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 require('express-async-errors');
 
 const middleware = require('../utils/middleware');
 const logger = require('../utils/logger');
 const config = require('../utils/config');
+
+const sessionRouter = require('./controllers/session');
 
 const app = express();
 
@@ -32,7 +36,16 @@ app.use(cors());
 app.use(morgan('common'));
 app.use(express.json());
 app.use(express.static('build'));
-app.use(middleware.tokenExtractor);
+app.use(
+	session({
+		secret: config.SESSIONSECRET,
+		store: new MongoStore({
+			mongooseConnection: mongoose.connection
+		})
+	})
+);
+
+app.use('/api/session', sessionRouter);
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);

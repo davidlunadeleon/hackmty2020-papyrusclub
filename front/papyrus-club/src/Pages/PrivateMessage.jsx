@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import style from "../Styles/Components/Chat.module.scss";
-export class Chat extends Component {
+export class PrivateMessage extends Component {
   render() {
     return (
       <div className={`row mt-5 mx-0`}>
@@ -30,4 +30,4 @@ export class Chat extends Component {
   }
 }
 
-export default Chat;
+export default PrivateMessage;

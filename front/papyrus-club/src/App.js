@@ -4,7 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 import Home from './Home';
 import Chat from './Pages/Chat';
-import Navbar from './Components/Navbar'
+import Navbar from './Components/Navbar';
+import Profile from './Pages/Profile';
 
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
               <Switch>
                 <Route exact path={"/"} component={Home} />
                 <Route path='/chat' component={Chat}/>
+                <Route path='/profile' component={Profile}/>
               </Switch>
       </Router>
     );

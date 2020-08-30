@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import style from "../Styles/Components/Chat.module.scss";
-import ChatWindow from "../Components/ChatWindow";
-
-export class Chat extends Component {
+export class PrivateMessage extends Component {
   render() {
     return (
       <div className={`row mt-5 mx-0`}>
@@ -24,7 +22,7 @@ export class Chat extends Component {
         </div>
         <div className={`col-8 ${style.nopadding}`}>
           <div className="mx-5 border text-center">
-            <ChatWindow />
+            AQUI VA EL CHAT
           </div>
         </div>
       </div>
@@ -32,4 +30,4 @@ export class Chat extends Component {
   }
 }
 
-export default Chat;
+export default PrivateMessage;

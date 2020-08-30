@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import  { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
-import Home from './Home';
+import Home from './Pages/Home';
 import Chat from './Pages/Chat';
-import Navbar from './Components/Navbar';
 import Profile from './Pages/Profile';
+import Join from './Components/Join';
+import Navbar from './Components/Navbar'
+import ChatWindow from './Components/ChatWindow';
 
 
 class App extends Component {
@@ -20,6 +22,8 @@ class App extends Component {
                 <Route exact path={"/"} component={Home} />
                 <Route path='/chat' component={Chat}/>
                 <Route path='/profile' component={Profile}/>
+                <Route path='/join' component={Join}/>
+                <Route path='/chatwindow' component={ChatWindow}/>
               </Switch>
       </Router>
     );

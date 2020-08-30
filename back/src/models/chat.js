@@ -4,7 +4,11 @@ const chatSchema = mongoose.Schema({
 	usuarios: [{ type: mongoose.Types.ObjectId, required: true }],
 	mensajes: [
 		{
-			usuario: { type: mongoose.Types.ObjectId, required: true },
+			usuario: {
+				type: mongoose.Types.ObjectId,
+				required: true,
+				ref: 'User'
+			},
 			contenido: { type: String },
 			fecha: { type: Date }
 		}

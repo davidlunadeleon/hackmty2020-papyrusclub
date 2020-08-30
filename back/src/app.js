@@ -11,6 +11,7 @@ const logger = require('../utils/logger');
 const config = require('../utils/config');
 
 const sessionRouter = require('./controllers/session');
+const chatRouter = require('./controllers/chat');
 
 const app = express();
 
@@ -46,6 +47,7 @@ app.use(
 );
 
 app.use('/api/session', sessionRouter);
+app.use('/api/chat', chatRouter);
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);

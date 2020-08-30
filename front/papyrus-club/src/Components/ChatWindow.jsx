@@ -4,25 +4,27 @@ import io from "socket.io-client";
 import styles from "../Styles/Components/ChatWindow.module.css";
 import Navbar from "./Navbar";
 import Input from "./Input"
+import InfoBar from "./InfoBar"
 import Messages from "./Messages"
+import TextContainer from "./TextContainer";
 import { Container } from "react-bootstrap";
+import {useLocation} from 'react-router-dom';
 
 let socket;
 
-
-const ChatWindow = ({ location }) => {
+const ChatWindow = () => {
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
   const [users, setUsers] = useState("");
-  const [message, setMessage] = useState([]);
+  const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = "localhost:3001";
+  const ENDPOINT = "http://localhost:3001";
+  let location = useLocation();
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
-
-    socket = io("localhost:3001");
-
+    socket = io(ENDPOINT);
+    // console.log(name, room)
     setRoom(room);
     setName(name);
 
@@ -31,10 +33,10 @@ const ChatWindow = ({ location }) => {
         alert(error);
       }
     });
-  }, [ENDPOINT, location.search]);
+  }, [ENDPOINT], location.search);
 
   useEffect(() => {
-    socket.on("message", (message) => {
+    socket.on("message", message => {
       setMessages((messages) => [...messages, message]);
     });
 
@@ -45,9 +47,9 @@ const ChatWindow = ({ location }) => {
 
   const sendMessage = (event) => {
     event.preventDefault();
-
     if (message) {
-      socket.emit("sendMessage", message, () => setMessage(""));
+      socket.emit("sendMessage", (message, () => setMessage("")));
+      console.log(messages)
     }
   };
 
@@ -55,7 +57,7 @@ const ChatWindow = ({ location }) => {
     <div className="container mt-5">
       <div className={styles.outerContainer}>
         <div className={styles.container}>
-          {/* <InfoBar room={room} /> */}
+          <InfoBar room={room} />
           <Messages messages={messages} name={name} />
           <Input
             message={message}
@@ -63,8 +65,8 @@ const ChatWindow = ({ location }) => {
             sendMessage={sendMessage}
           />
         </div>
-        {/* <TextContainer users={users}/> */}
       </div>
+        <TextContainer users={users}/>
     </div>
   );
 };

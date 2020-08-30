@@ -9,11 +9,9 @@ import Join from './Components/Join';
 import Navbar from './Components/Navbar'
 import ChatWindow from './Components/ChatWindow';
 
-
 class App extends Component {
 
   render(){
-
     return(
         <Router>
           <Navbar />

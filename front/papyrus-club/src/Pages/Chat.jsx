@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import style from "../Styles/Components/Chat.module.scss";
+import ChatWindow from "../Components/ChatWindow";
 export class Home extends Component {
   render() {
     return (
@@ -22,7 +23,7 @@ export class Home extends Component {
         </div>
         <div className={`col-8 ${style.nopadding}`}>
           <div className="mx-5 border text-center">
-            AQUI VA EL CHAT
+            <ChatWindow />
           </div>
 
         </div>

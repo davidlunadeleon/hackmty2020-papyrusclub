@@ -43,17 +43,7 @@ class Navbar extends Component {
           </div>
           <Link className={navStyles.logo} to="/">Papyrus Club</Link>
           <ul className={open ? navStyles.showing : ""}>
-            <li>
-            <Link className={navStyles.listLink} to="chat">
-              Chat
-            </Link>
-
-            </li>
-            <li>
-            <Link className={navStyles.listLink} to="join">
-              Join
-            </Link>
-            </li>
+            <li><br/></li>
           </ul>
       </nav>
     )

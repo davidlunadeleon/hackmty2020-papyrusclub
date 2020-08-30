@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
+import queryString from 'query-string';
 // import styles from "../Home.module.css";
 import Navbar from "./Navbar";
 import { Container } from "react-bootstrap";

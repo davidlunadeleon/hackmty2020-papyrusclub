@@ -51,8 +51,4 @@ sessionRouter.route('/logout').post(async (req, res) => {
 	res.send('Session has ended');
 });
 
-sessionRouter.route('/').get((req, res) => {
-	res.json({ ok: req.session.username });
-});
-
 module.exports = sessionRouter;

@@ -49,13 +49,7 @@ app.use(
 
 app.use('/api/session', sessionRouter);
 app.use('/api/chat', chatRouter);
-
-app.use('/', (req, res) => {
-	const io = req.app.get('socketio');
-	io.emit('message', 'Hola');
-	res.sendStatus(200);
-});
-app.use('/api/session', booksRouter);
+app.use('/api/books', booksRouter);
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);

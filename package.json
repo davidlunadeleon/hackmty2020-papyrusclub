@@ -1,0 +1,22 @@
+{
+  "name": "hackmty2020-papyrusclub",
+  "version": "1.0.0",
+  "description": "Repository for the HackMty 2020 - Team Phalanx",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidlunadeleon/hackmty2020-papyrusclub.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidlunadeleon/hackmty2020-papyrusclub/issues"
+  },
+  "homepage": "https://github.com/davidlunadeleon/hackmty2020-papyrusclub#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
+}

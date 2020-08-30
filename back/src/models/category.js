@@ -3,7 +3,7 @@ const uniqueValidator = require('mongoose-unique-validator');
 
 const categorySchema = mongoose.Schema({
     name: { type: String, required: true, unique: true },
-    books: [{ type: mongoose.Types.ObjectId, ref: 'Book', required: true}],
+    books: [{ type: Object}],
 	votes: [{ type: mongoose.Types.ObjectId }]
 });
 

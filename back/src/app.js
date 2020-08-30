@@ -12,6 +12,7 @@ const config = require('../utils/config');
 
 const sessionRouter = require('./controllers/session');
 const chatRouter = require('./controllers/chat');
+const booksRouter = require('./controllers/books');
 
 const app = express();
 
@@ -54,6 +55,7 @@ app.use('/', (req, res) => {
 	io.emit('message', 'Hola');
 	res.sendStatus(200);
 });
+app.use('/api/session', booksRouter);
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);

@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 
 const bookSchema = mongoose.Schema({
-	url_api: { type: String, required: true, unique: true },
-	questions: [{ type: mongoose.Types.ObjectId, required: true }]
+	url_api: { type: String, unique: true },
+	questions: [{ type: mongoose.Types.ObjectId }]
 });
 
 bookSchema.plugin(uniqueValidator);
